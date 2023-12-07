@@ -4,13 +4,10 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
 
-// POST a new user
+// POST: Register a new user
 router.post('/', async (req, res) => {
-  const user = new User({
-    username: req.body.username,
-    email: req.body.email,
-    // Add other user-related fields as needed
-  });
+  const { username, email } = req.body;
+  const user = new User({ username, email });
 
   try {
     const newUser = await user.save();
@@ -20,7 +17,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// GET all users
+// GET: Retrieve all users
 router.get('/', async (req, res) => {
   try {
     const users = await User.find();
@@ -30,4 +27,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+// Additional routes for updating and deleting users can be added here
+
 module.exports = router;
+

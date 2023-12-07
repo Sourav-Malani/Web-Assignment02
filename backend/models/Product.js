@@ -15,6 +15,8 @@ const productSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  // You can add more fields here as needed
 });
 
 module.exports = mongoose.model('Product', productSchema);
+

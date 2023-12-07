@@ -6,14 +6,15 @@ const userSchema = new mongoose.Schema({
   username: {
     type: String,
     required: true,
-    unique: true,
+    unique: true
   },
   email: {
     type: String,
     required: true,
-    unique: true,
+    unique: true
   },
-  // Add other user-related fields as needed
+  // Add other relevant fields such as password, roles, etc.
 });
 
 module.exports = mongoose.model('User', userSchema);
+
