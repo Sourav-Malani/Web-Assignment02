@@ -7,16 +7,16 @@ const LicenseManagementDashboard = () => {
   useEffect(() => {
     const fetchActivatedLicenses = async () => {
       try {
-        const activatedLicenses = await LicenseService.getActivatedLicenses();
+        const activatedLicenses = await LicenseService.getActivatedLicensesWithUser(); // Use the new method
         setLicenses(activatedLicenses);
       } catch (error) {
         console.error('Error fetching activated licenses:', error);
       }
     };
-
+  
     fetchActivatedLicenses();
   }, []);
-
+  
   return (
     <div style={styles.container}>
       <h2>Activated Licenses</h2>

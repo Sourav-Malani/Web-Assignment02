@@ -13,10 +13,10 @@ const LicenseService = {
     return response.data;
   },
 
-  activateLicense: async (licenseId, userId) => {
-    const response = await axios.post(`${API_URL}/activate`, { licenseId, userId });
+  activateLicense: async (licenseKey, userId) => {
+    const response = await axios.post(`${API_URL}/activate`, { licenseKey, userId });
     return response.data;
-  },
+  },  
   addLicense: async (licenseData) => {
     const response = await axios.post(API_URL, licenseData);
     return response.data;

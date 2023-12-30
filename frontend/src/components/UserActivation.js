@@ -10,9 +10,9 @@ const UserActivation = () => {
   const handleAssociation = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-
+  
     try {
-      await LicenseService.associateUser(licenseId, userId);
+      await LicenseService.associateUser(licenseId, userId); // Update this line
       setMessage('User associated with license successfully!');
       setLicenseId('');
       setUserId('');
@@ -23,8 +23,7 @@ const UserActivation = () => {
       setIsSubmitting(false);
     }
   };
-
-  return (
+    return (
     <div style={styles.container}>
       <h2>Associate User with License</h2>
       <form onSubmit={handleAssociation} style={styles.form}>
